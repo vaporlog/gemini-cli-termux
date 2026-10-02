@@ -3,7 +3,7 @@
 # Usage: bash scripts/termux-setup.sh [repo-url]
 set -euo pipefail
 
-REPO_URL="${1:-https://github.com/TU_USUARIO/gemini-cli.git}"
+REPO_URL="${1:-https://github.com/vaporlog/gemini-cli-termux.git}"
 INSTALL_DIR="${HOME}/gemini-cli"
 
 echo "==> Updating Termux packages"

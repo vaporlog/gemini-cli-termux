@@ -25,7 +25,7 @@ Todo lo demás es código oficial de `google-gemini/gemini-cli` sin tocar.
 ## Instalación rápida (automática)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/TU_USUARIO/gemini-cli/main/scripts/termux-setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/vaporlog/gemini-cli-termux/main/scripts/termux-setup.sh | bash
 ```
 
 O con el repo ya clonado:
@@ -40,7 +40,7 @@ bash scripts/termux-setup.sh
 pkg update -y && pkg upgrade -y
 pkg install -y git nodejs-lts termux-api
 
-git clone --depth 1 https://github.com/TU_USUARIO/gemini-cli.git
+git clone --depth 1 https://github.com/vaporlog/gemini-cli-termux.git
 cd gemini-cli
 
 # --ignore-scripts evita la compilación de módulos nativos (node-pty, keytar)
