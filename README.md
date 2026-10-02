@@ -35,6 +35,10 @@ for recommended system specifications and a detailed installation guide.
 
 ### Quick Install
 
+> 📱 **Android (Termux)**: this fork carries Termux-specific patches (clipboard
+> crash fix, `termux-open-url` browser launch). See
+> [docs/termux.md](docs/termux.md) and run `bash scripts/termux-setup.sh`.
+
 #### Run instantly with npx
 
 ```bash

@@ -80,6 +80,13 @@ export async function openBrowserSecurely(url: string): Promise<void> {
       ];
       break;
 
+    case 'android':
+      // Termux on Android: open the URL in the device's default browser via
+      // Termux:API (requires the optional `termux-api` package).
+      command = 'termux-open-url';
+      args = [url];
+      break;
+
     case 'linux':
     case 'freebsd':
     case 'openbsd':

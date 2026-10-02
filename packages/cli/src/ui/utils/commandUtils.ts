@@ -5,7 +5,7 @@
  */
 
 import { debugLogger } from '@google/gemini-cli-core';
-import clipboardy from 'clipboardy';
+import { writeClipboard } from './clipboard.js';
 import type { SlashCommand } from '../commands/types.js';
 import fs from 'node:fs';
 import type { Writable } from 'node:stream';
@@ -280,7 +280,7 @@ export const copyToClipboard = async (
   }
 
   // Local / non-TTY fallback
-  await clipboardy.write(text);
+  await writeClipboard(text);
 };
 
 export const getUrlOpenCommand = (): string => {
@@ -295,6 +295,11 @@ export const getUrlOpenCommand = (): string => {
       break;
     case 'linux':
       openCmd = 'xdg-open';
+      break;
+    case 'android':
+      // Termux on Android: open URLs in the device's default browser via
+      // Termux:API (requires the optional `termux-api` package).
+      openCmd = 'termux-open-url';
       break;
     default:
       // Default to xdg-open, which appears to be supported for the less popular operating systems.
